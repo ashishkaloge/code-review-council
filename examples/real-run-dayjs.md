@@ -79,8 +79,8 @@ Day.js selects the overlap offset using New York's current offset, while Moment 
 
 ## Checking the findings
 
-Each finding was checked afterwards against the published npm packages, not
-the reviewers' word.
+The three distinct runtime bugs were checked afterwards against the published
+npm packages. The seasonal-test finding was not checked.
 
 | # | Finding | Result |
 | --- | --- | --- |
@@ -104,8 +104,8 @@ dayjs(-1).tz('UTC').valueOf()
 // 1.11.21: -1   1.11.22: 59999   1.11.23: 59999
 
 // TZ=Europe/Paris
-dayjs('2050-03-27T06:30:00Z').tz('America/Guadeloupe').valueOf()
-// 1.11.21: 2050-03-27T06:30:00Z   1.11.22 and 1.11.23: 2050-03-27T07:30:00Z
+dayjs('2050-03-27T06:30:00Z').tz('America/Guadeloupe').toISOString()
+// 1.11.21: 2050-03-27T06:30:00.000Z   1.11.22 and 1.11.23: 2050-03-27T07:30:00.000Z
 ```
 
 ## Limits

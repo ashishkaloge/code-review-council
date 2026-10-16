@@ -20,8 +20,8 @@ preview while its read-only restrictions are being verified.
 On October 16, 2026, the council reviewed
 [dayjs commit `e27ee80`](https://github.com/iamkun/dayjs/commit/e27ee8021a512b5770ffe683e010830bb9b6fb6d),
 a small change to the timezone plugin that shipped in dayjs 1.11.22. One run
-with Claude Code and Codex took 5m 42s and confirmed five findings. Each was
-then checked against the published dayjs packages:
+with Claude Code and Codex took 5m 42s and confirmed five findings. Three
+distinct runtime bugs were then reproduced against the published dayjs packages:
 
 | Confirmed finding | Checked against dayjs on npm |
 | --- | --- |
@@ -135,9 +135,9 @@ to a host agent such as Claude Code or Codex, which then uses its own
 subscription. [rcl](https://github.com/allocator-one/rcl) calls provider APIs,
 OpenRouter or an OpenAI-compatible endpoint. This tool starts separate Claude
 Code and Codex review sessions itself, drops findings that cite lines outside
-the diff, and keeps a finding only when another reviewer supports it in an
-anonymous vote. Whether that reviews better has not been measured; see the
-benchmark.
+the diff, and keeps a finding only when another reviewer independently reports
+it or confirms it in an anonymous vote. Whether that reviews better has not
+been measured; see the benchmark.
 
 ## Benchmark
 
