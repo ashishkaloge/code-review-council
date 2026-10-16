@@ -108,11 +108,16 @@ stage new files first.
 
 ## How it differs
 
-[open-code-review](https://github.com/alibaba/open-code-review) and
-[rcl](https://github.com/allocator-one/rcl) call model APIs with keys you
-configure. This tool drives the agent CLIs you already use, under whatever
-login each one has, and lets each agent read the repository with its own
-tools. Whether that reviews better is a question for the benchmark.
+[open-code-review](https://github.com/alibaba/open-code-review) can call a
+model API with a key you configure, or
+[delegate the review](https://github.com/alibaba/open-code-review/blob/main/pages/src/content/docs/en/integrations/delegate.md)
+to a host agent such as Claude Code or Codex, which then uses its own
+subscription. [rcl](https://github.com/allocator-one/rcl) calls provider APIs,
+OpenRouter or an OpenAI-compatible endpoint. This tool starts separate Claude
+Code and Codex review sessions itself, drops findings that cite lines outside
+the diff, and keeps a finding only when another reviewer supports it in an
+anonymous vote. Whether that reviews better has not been measured; see the
+benchmark.
 
 ## Benchmark
 
