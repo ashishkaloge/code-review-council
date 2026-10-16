@@ -14,6 +14,7 @@
     "LICENSE",
     "docs/benchmark.md",
     "examples/sample-report.md",
+    "examples/real-run-dayjs.md",
     "CONTRIBUTING.md",
     "SECURITY.md"
   ],

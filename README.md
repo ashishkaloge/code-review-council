@@ -11,9 +11,29 @@ only when at least two reviewers support it. The tool uses your existing CLI
 logins and requires no additional API key. Gemini support is disabled in this
 preview while its read-only restrictions are being verified.
 
-[How it works](#how-it-works) · [Quick start](#quick-start) ·
-[Example report](examples/sample-report.md) · [Benchmark](docs/benchmark.md) ·
+[Real run](#real-run) · [How it works](#how-it-works) ·
+[Quick start](#quick-start) · [Benchmark](docs/benchmark.md) ·
 [Safety](#safety)
+
+## Real run
+
+On October 16, 2026, the council reviewed
+[dayjs commit `e27ee80`](https://github.com/iamkun/dayjs/commit/e27ee8021a512b5770ffe683e010830bb9b6fb6d),
+a small change to the timezone plugin that shipped in dayjs 1.11.22. One run
+with Claude Code and Codex took 5m 42s and confirmed five findings. Three
+distinct runtime bugs were then reproduced against the published dayjs packages:
+
+| Confirmed finding | Checked against dayjs on npm |
+| --- | --- |
+| Invalid dates now throw `RangeError` in `.tz()` | Reproduced in 1.11.22. Reported as [#3178](https://github.com/iamkun/dayjs/issues/3178), fixed in 1.11.23 |
+| Negative timestamps with milliseconds get the wrong offset (reported twice in different words) | Reproduced in 1.11.22 and 1.11.23. Open fix: [#3227](https://github.com/iamkun/dayjs/pull/3227) |
+| Wall times in the host's DST gap return the wrong instant | Reproduced in 1.11.22 and 1.11.23. Open fix: [#3219](https://github.com/iamkun/dayjs/pull/3219) |
+| A new test depends on the current season | Not checked |
+
+None of the three reproduced bugs exist in 1.11.21. The reviewers had no web
+access, but dayjs is public, so the models may have seen related discussion in
+training. This is one run on one change, not an accuracy benchmark.
+[Full report, command and checks](examples/real-run-dayjs.md).
 
 ## Why
 
@@ -64,7 +84,7 @@ To use it from Claude Code or Codex, copy
 [`skills/code-review-council`](skills/code-review-council/SKILL.md) into your
 skills directory and ask for a council review.
 
-## Example
+## Report format
 
 ```text
 ## Code review council: 2 confirmed findings
@@ -108,11 +128,16 @@ stage new files first.
 
 ## How it differs
 
-[open-code-review](https://github.com/alibaba/open-code-review) and
-[rcl](https://github.com/allocator-one/rcl) call model APIs with keys you
-configure. This tool drives the agent CLIs you already use, under whatever
-login each one has, and lets each agent read the repository with its own
-tools. Whether that reviews better is a question for the benchmark.
+[open-code-review](https://github.com/alibaba/open-code-review) can call a
+model API with a key you configure, or
+[delegate the review](https://github.com/alibaba/open-code-review/blob/main/pages/src/content/docs/en/integrations/delegate.md)
+to a host agent such as Claude Code or Codex, which then uses its own
+subscription. [rcl](https://github.com/allocator-one/rcl) calls provider APIs,
+OpenRouter or an OpenAI-compatible endpoint. This tool starts separate Claude
+Code and Codex review sessions itself, drops findings that cite lines outside
+the diff, and keeps a finding only when another reviewer independently reports
+it or confirms it in an anonymous vote. Whether that reviews better has not
+been measured; see the benchmark.
 
 ## Benchmark
 
@@ -158,7 +183,9 @@ documentation and are tested against a scripted fake agent.
 Both live checks ran on October 8, 2026, using subscription logins. Fixture
 files remained unchanged. The Codex run returned two differently worded entries
 for the same bug; this is one detected defect, not two. These are synthetic
-functionality checks, not an accuracy benchmark.
+functionality checks, not an accuracy benchmark. On October 16, 2026, Claude
+Code 2.1.295 and Codex 0.162.0-alpha.17.2 completed the [real run](#real-run)
+above, also on subscription logins.
 
 Live-run reports are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).
 
