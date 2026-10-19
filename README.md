@@ -1,6 +1,6 @@
 # Code Review Council
 
-[![CI](https://github.com/incline-ltd/code-review-council/actions/workflows/ci.yml/badge.svg)](https://github.com/incline-ltd/code-review-council/actions/workflows/ci.yml)
+[![CI](https://github.com/ashishkaloge/code-review-council/actions/workflows/ci.yml/badge.svg)](https://github.com/ashishkaloge/code-review-council/actions/workflows/ci.yml)
 [![Node.js 20+](https://img.shields.io/badge/Node.js-20%2B-339933)](https://nodejs.org/)
 [![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 
@@ -68,7 +68,7 @@ checks stop the review; future CLI behavior and configuration changes need
 fresh verification.
 
 ```bash
-npm install -g git+https://github.com/incline-ltd/code-review-council.git#v0.1.0
+npm install -g git+https://github.com/ashishkaloge/code-review-council.git#v0.1.0
 cd your-project
 code-review-council --list-agents
 code-review-council              # uncommitted changes
@@ -191,9 +191,9 @@ Live-run reports are welcome; see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Related Incline projects
 
-- [Coding Agent Guidelines](https://github.com/incline-ltd/coding-agent-guidelines): short rules for small, verified changes by coding agents.
-- [Agent Cost Guard](https://github.com/incline-ltd/agent-cost-guard): a local hook that checks supported cloud-cost commands for approval.
-- [Awesome Agentic Engineering](https://github.com/incline-ltd/awesome-agentic-engineering): a reviewed guide to coding-agent tools.
+- [Coding Agent Guidelines](https://github.com/ashishkaloge/coding-agent-guidelines): short rules for small, verified changes by coding agents.
+- [Agent Cost Guard](https://github.com/ashishkaloge/agent-cost-guard): a local hook that checks supported cloud-cost commands for approval.
+- [Awesome Agentic Engineering](https://github.com/ashishkaloge/awesome-agentic-engineering): a reviewed guide to coding-agent tools.
 
 ## License
 

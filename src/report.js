@@ -117,7 +117,7 @@ export function toSarif(result, version) {
             driver: {
               name: "code-review-council",
               version,
-              informationUri: "https://github.com/incline-ltd/code-review-council",
+              informationUri: "https://github.com/ashishkaloge/code-review-council",
               rules: [{ id: "confirmed-finding", shortDescription: { text: "Finding confirmed by the review council" } }],
             },
           },

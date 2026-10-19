@@ -7,7 +7,7 @@ description: Review code changes with several installed coding-agent CLIs (Claud
 
 1. Find the CLI. Run `code-review-council --version`. If it is not installed,
    use `node <checkout>/bin/code-review-council.js` from a clone of
-   https://github.com/incline-ltd/code-review-council.
+   https://github.com/ashishkaloge/code-review-council.
 2. Pick the scope with the user:
    - uncommitted changes: no flag;
    - the whole branch: `--base <default branch>`, for example `--base main`.

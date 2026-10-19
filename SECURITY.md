@@ -6,7 +6,7 @@ The latest 0.1.x preview and the latest commit on `main` receive fixes.
 
 ## Report a vulnerability
 
-Use [GitHub private vulnerability reporting](https://github.com/incline-ltd/code-review-council/security/advisories/new)
+Use [GitHub private vulnerability reporting](https://github.com/ashishkaloge/code-review-council/security/advisories/new)
 to report a security problem. Do not include exploit details or private code
 in a public issue.
 
