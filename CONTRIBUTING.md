@@ -3,7 +3,7 @@
 Requires Node.js 20 or newer and Git. There is nothing to install.
 
 ```bash
-git clone https://github.com/incline-ltd/code-review-council.git
+git clone https://github.com/ashishkaloge/code-review-council.git
 cd code-review-council
 npm test
 ```

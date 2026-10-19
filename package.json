@@ -36,9 +36,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/incline-ltd/code-review-council.git"
+    "url": "git+https://github.com/ashishkaloge/code-review-council.git"
   },
-  "homepage": "https://github.com/incline-ltd/code-review-council#readme",
+  "homepage": "https://github.com/ashishkaloge/code-review-council#readme",
   "publishConfig": {
     "access": "public"
   },
@@ -47,6 +47,6 @@
     "linux"
   ],
   "bugs": {
-    "url": "https://github.com/incline-ltd/code-review-council/issues"
+    "url": "https://github.com/ashishkaloge/code-review-council/issues"
   }
 }
