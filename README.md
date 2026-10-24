@@ -68,17 +68,25 @@ checks stop the review; future CLI behavior and configuration changes need
 fresh verification.
 
 ```bash
-npm install -g git+https://github.com/ashishkaloge/code-review-council.git#v0.1.0
+npm install -g @ashishkaloge/code-review-council@0.1.0
 cd your-project
 code-review-council --list-agents
 code-review-council              # uncommitted changes
 code-review-council --base main  # the whole branch
 ```
 
-This installs the tagged GitHub release directly. No npm account is needed.
-There are no dependencies and no build step. With one supported agent installed,
-it runs that agent as two separate reviewers. To skip installation, clone this
-repository and run `node <checkout>/bin/code-review-council.js` from your project.
+This installs the 0.1.0 preview. No npm account is needed. There are no
+dependencies and no build step. With one supported agent installed, it runs
+that agent as two separate reviewers.
+
+The original tagged GitHub preview is also available:
+
+```bash
+npm install -g git+https://github.com/ashishkaloge/code-review-council.git#v0.1.0
+```
+
+To skip installation, clone this repository and run
+`node <checkout>/bin/code-review-council.js` from your project.
 
 To use it from Claude Code or Codex, copy
 [`skills/code-review-council`](skills/code-review-council/SKILL.md) into your
