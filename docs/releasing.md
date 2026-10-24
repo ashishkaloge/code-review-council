@@ -59,7 +59,8 @@ continues to work with that restriction; it does not require a stored token.
    quality.
 
 The workflow cannot approve stages, change dist-tags, create Git tags or create
-GitHub releases. Keep the published `0.1.0` version unchanged during setup.
+GitHub releases. Publish each release under a new version; never replace an
+already published version.
 
 References: [npm trusted publishers](https://docs.npmjs.com/trusted-publishers/),
 [staged publishing](https://docs.npmjs.com/staged-publishing/) and

@@ -1,6 +1,6 @@
 {
   "name": "@ashishkaloge/code-review-council",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Cross-check code reviews with Claude Code and Codex using existing CLI logins. Deterministic diff anchoring and anonymous votes, with Markdown, JSON and SARIF reports.",
   "type": "module",
   "bin": {
