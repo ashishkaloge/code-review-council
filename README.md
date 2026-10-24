@@ -68,14 +68,14 @@ checks stop the review; future CLI behavior and configuration changes need
 fresh verification.
 
 ```bash
-npm install -g @ashishkaloge/code-review-council@0.1.0
+npm install -g @ashishkaloge/code-review-council@0.1.1
 cd your-project
 code-review-council --list-agents
 code-review-council              # uncommitted changes
 code-review-council --base main  # the whole branch
 ```
 
-This installs the 0.1.0 preview. No npm account is needed. There are no
+This installs the 0.1.1 preview. No npm account is needed. There are no
 dependencies and no build step. With one supported agent installed, it runs
 that agent as two separate reviewers.
 
@@ -179,7 +179,7 @@ shows. See the [benchmark plan](docs/benchmark.md).
 
 ## Status
 
-Preview, version 0.1.0. Adapters follow each tool's official headless
+Preview, version 0.1.1. Adapters follow each tool's official headless
 documentation and are tested against a scripted fake agent.
 
 | Agent | Adapter tests | Live run |
