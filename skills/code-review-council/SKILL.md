@@ -5,9 +5,19 @@ description: Review code changes with several installed coding-agent CLIs (Claud
 
 # Code Review Council
 
+Requires Node.js 20+, Git, macOS or Linux, and a supported coding-agent CLI
+signed in with the user's existing account.
+
 1. Find the CLI. Run `code-review-council --version`. If it is not installed,
-   use `node <checkout>/bin/code-review-council.js` from a clone of
-   https://github.com/ashishkaloge/code-review-council.
+   use the published npm preview:
+
+   ```bash
+   npm exec --package=@ashishkaloge/code-review-council@0.1.1 -- code-review-council --version
+   ```
+
+   Replace `--version` with the review options below. For a persistent installation, use
+   `npm install -g @ashishkaloge/code-review-council@0.1.1` when the global npm
+   prefix is writable; otherwise keep using `npm exec` without `sudo`.
 2. Pick the scope with the user:
    - uncommitted changes: no flag;
    - the whole branch: `--base <default branch>`, for example `--base main`.
